@@ -12,7 +12,7 @@ on early-init
 # create mountpoints
     mkdir /mnt 0775 root system
     mount debugfs /sys/kernel/debug /sys/kernel/debug
-    setprop ro.mtk.hardware mt6582
+    setprop ro.mtk.hardware mt6592
     mkdir /storage 0055 system sdcard_r
     mkdir /storage/sdcard0 0000 system system
     # for backwards compatibility
