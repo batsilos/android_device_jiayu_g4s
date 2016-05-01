@@ -1,5 +1,5 @@
 #
-# system.prop for HM2014011
+# system.prop for Jiayu G4S
 #
 service.adb.root=1
 ro.sf.lcd_density=320

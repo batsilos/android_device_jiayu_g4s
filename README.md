@@ -6,14 +6,14 @@ This is a device tree for Xiaomi Redmi_1s_TD(HM2014011) which is based on MT6582
 * init
   Sync CyanogenMod source:
 
-        # repo init -u git://github.com/ferhung-mtk/android.git -b cm-13.0        
+        # repo init -u git://github.com/batsilos/android.git -b cm-13.0        
         # repo sync
 
 * full build
         
         # source build/envsetup.sh
 
-        # brunch cm_HM2014011-userdebug
+        # brunch cm_g4s-userdebug
 
 # Limitations
 
