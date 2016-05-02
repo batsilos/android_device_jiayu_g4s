@@ -60,6 +60,12 @@ PRODUCT_PACKAGES += \
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/mtk-kpd.kl:system/usr/keylayout/mtk-kpd.kl
+    
+# Thermal
+PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/configs/thermal.conf:system/etc/.tp/thermal.conf \
+     $(LOCAL_PATH)/configs/.ht120.mtc:system/etc/.tp/.ht120.mtc \
+     $(LOCAL_PATH)/configs/thermal.off.conf:system/etc/.tp/thermal.off.conf
 
 # GSM
 #PRODUCT_PACKAGES += \
@@ -74,7 +80,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.mt6592:root/fstab.mt6592 \
     $(LOCAL_PATH)/rootdir/init.recovery.mt6592.rc:recovery/root/init.recovery.mt6592.rc \
     $(LOCAL_PATH)/rootdir/init.mt6592.rc:root/init.mt6592.rc \
-    $(LOCAL_PATH)/rootdir/init.mt6592_common.rc:root/init.mt6592_common.rc \
     $(LOCAL_PATH)/rootdir/init.modem.rc:root/init.modem.rc \
     $(LOCAL_PATH)/rootdir/ueventd.mt6592.rc:root/ueventd.mt6592.rc \
     $(LOCAL_PATH)/rootdir/init.mt6592.usb.rc:root/init.mt6592.usb.rc \
@@ -129,10 +134,31 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     libnl_2 \
     libtinyxml
+    
+# FM Radio
+PRODUCT_PACKAGES += \
+    FMRadio \
+    libfmjni \
+    libfmmt6620 \
+    libfmmt6628 \
+    libfmmt6627 \
+    libfmmt6630 \
+    libfmcust \
+    libmtkplayer
 
+# Smart Cover
+PRODUCT_PACKAGES += \
+    SmartCover
+    
 # Camera
 PRODUCT_PACKAGES += \
     Snap
+    
+# Set default player to AwesomePlayer
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.media.use-awesome=true
+
+$(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
